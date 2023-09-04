@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Product } from './product/entities/product.entity';
+import { ShopcartModule } from './shopcart/shopcart.module';
+import { Shopcart } from './shopcart/entities/shopcart.entity';
 
 @Module({
   imports: [
@@ -14,10 +16,11 @@ import { Product } from './product/entities/product.entity';
       username: 'root',
       password: 'root',
       database: 'concptsDb',
-      entities: [Product],
+      entities: [Product, Shopcart],
       synchronize: false,
     }),
     ProductModule,
+    ShopcartModule,
   ],
   controllers: [AppController],
   providers: [AppService],
