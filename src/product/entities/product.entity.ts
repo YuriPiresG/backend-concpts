@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Shopcart } from 'src/shopcart/entities/shopcart.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn()
@@ -21,4 +22,7 @@ export class Product {
 
   @Column()
   image: string;
+
+  @OneToMany(() => Shopcart, (shopcart: Shopcart) => shopcart.product)
+  shopcarts: Shopcart[];
 }

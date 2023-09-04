@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Product } from './product/entities/product.entity';
 import { ShopcartModule } from './shopcart/shopcart.module';
+import { Product } from './product/entities/product.entity';
 import { Shopcart } from './shopcart/entities/shopcart.entity';
 
 @Module({
@@ -16,7 +16,7 @@ import { Shopcart } from './shopcart/entities/shopcart.entity';
       username: 'root',
       password: 'root',
       database: 'concptsDb',
-      entities: [Product, Shopcart],
+      entities: [Shopcart, Product],
       synchronize: false,
     }),
     ProductModule,

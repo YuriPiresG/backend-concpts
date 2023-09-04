@@ -1,10 +1,9 @@
-import { IsNotEmpty, IsNumber, IsObject } from 'class-validator';
-import { Product } from 'src/product/entities/product.entity';
+import { IsNotEmpty, IsNumber } from 'class-validator';
 
 export class CreateShopcartDto {
   @IsNotEmpty()
-  @IsObject()
-  product: Product;
+  @IsNumber()
+  productId: number;
 
   @IsNotEmpty()
   @IsNumber()
