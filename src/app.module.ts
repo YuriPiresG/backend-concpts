@@ -11,11 +11,11 @@ import { Product } from './product/entities/product.entity';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'root', // user
-      password: 'root', // password
-      database: 'concptsDb', // database
+      username: 'root',
+      password: 'root',
+      database: 'concptsDb',
       entities: [Product],
-      synchronize: true,
+      synchronize: false,
     }),
     ProductModule,
   ],
