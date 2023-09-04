@@ -18,4 +18,7 @@ export class Product {
 
   @Column()
   peso: string;
+
+  @Column()
+  image: string;
 }
