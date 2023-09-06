@@ -13,5 +13,5 @@ export class UpdateShopcartDto extends PartialType(CreateShopcartDto) {
 
   @IsNotEmpty()
   @IsNumber()
-  preco: number;
+  precoFinal: number;
 }

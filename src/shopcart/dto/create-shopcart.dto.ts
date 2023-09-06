@@ -11,5 +11,5 @@ export class CreateShopcartDto {
 
   @IsNotEmpty()
   @IsNumber()
-  preco: number;
+  precoFinal: number;
 }

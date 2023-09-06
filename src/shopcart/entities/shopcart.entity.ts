@@ -13,5 +13,5 @@ export class Shopcart {
   quantidade: number;
 
   @Column()
-  preco: number;
+  precoFinal: number;
 }
