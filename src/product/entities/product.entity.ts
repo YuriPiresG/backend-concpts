@@ -20,7 +20,7 @@ export class Product {
   @Column()
   peso: string;
 
-  @Column()
+  @Column({ type: 'double' })
   preco: number;
 
   @Column()

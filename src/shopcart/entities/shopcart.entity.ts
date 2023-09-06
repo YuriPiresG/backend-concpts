@@ -12,6 +12,6 @@ export class Shopcart {
   @Column()
   quantidade: number;
 
-  @Column()
+  @Column({ type: 'double' })
   precoFinal: number;
 }
