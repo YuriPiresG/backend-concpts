@@ -42,4 +42,9 @@ export class ShopcartController {
   remove(@Param('id') id: string) {
     return this.shopcartService.remove(+id);
   }
+
+  @Delete()
+  deleteAll() {
+    return this.shopcartService.deleteAll();
+  }
 }

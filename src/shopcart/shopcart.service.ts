@@ -24,19 +24,24 @@ export class ShopcartService {
     });
   }
 
-  findAll() {
-    return this.shopcartRepository.find({ relations: ['product'] });
+  async findAll() {
+    return await this.shopcartRepository.find({ relations: ['product'] });
   }
 
-  findOne(id: number) {
-    return this.shopcartRepository.findOne({ where: { index: id } });
+  async findOne(id: number) {
+    return await this.shopcartRepository.findOne({ where: { index: id } });
   }
 
-  update(id: number, updateShopcartDto: UpdateShopcartDto) {
-    return this.shopcartRepository.update(id, updateShopcartDto);
+  async update(id: number, updateShopcartDto: UpdateShopcartDto) {
+    return await this.shopcartRepository.update(id, updateShopcartDto);
   }
 
-  remove(id: number) {
-    return this.shopcartRepository.delete(id);
+  async remove(id: number) {
+    return await this.shopcartRepository.delete(id);
+  }
+
+  async deleteAll() {
+    await this.shopcartRepository.clear();
+    return 'Shopcart cleared!';
   }
 }
