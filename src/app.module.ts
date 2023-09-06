@@ -6,6 +6,7 @@ import { ProductModule } from './product/product.module';
 import { ShopcartModule } from './shopcart/shopcart.module';
 import { Product } from './product/entities/product.entity';
 import { Shopcart } from './shopcart/entities/shopcart.entity';
+import { CheckoutModule } from './checkout/checkout.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { Shopcart } from './shopcart/entities/shopcart.entity';
     }),
     ShopcartModule,
     ProductModule,
+    CheckoutModule,
   ],
   controllers: [AppController],
   providers: [AppService],
