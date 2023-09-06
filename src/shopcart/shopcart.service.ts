@@ -25,7 +25,7 @@ export class ShopcartService {
   }
 
   findAll() {
-    return this.shopcartRepository.find();
+    return this.shopcartRepository.find({ relations: ['product'] });
   }
 
   findOne(id: number) {
