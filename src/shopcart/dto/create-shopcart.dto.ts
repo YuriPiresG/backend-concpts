@@ -8,8 +8,4 @@ export class CreateShopcartDto {
   @IsNotEmpty()
   @IsNumber()
   quantidade: number;
-
-  @IsNotEmpty()
-  @IsNumber()
-  precoFinal: number;
 }

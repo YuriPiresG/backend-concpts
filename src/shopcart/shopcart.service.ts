@@ -15,11 +15,13 @@ export class ShopcartService {
     private productService: ProductService,
   ) {}
   async create(createShopcartDto: CreateShopcartDto) {
-    const a = await this.productService.findOne(createShopcartDto.productId);
+    const productFound = await this.productService.findOne(
+      createShopcartDto.productId,
+    );
     return await this.shopcartRepository.save({
-      product: a,
+      product: productFound,
       quantidade: createShopcartDto.quantidade,
-      precoFinal: createShopcartDto.precoFinal,
+      precoFinal: productFound.preco * createShopcartDto.quantidade,
     });
   }
 

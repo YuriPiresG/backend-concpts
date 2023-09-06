@@ -16,6 +16,10 @@ export class UpdateProductDto extends PartialType(CreateProductDto) {
   volume: number;
 
   @IsNotEmpty()
+  @IsNumber()
+  preco: number;
+
+  @IsNotEmpty()
   @IsString()
   marca: string;
 

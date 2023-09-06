@@ -21,6 +21,9 @@ export class Product {
   peso: string;
 
   @Column()
+  preco: number;
+
+  @Column()
   image: string;
 
   @OneToMany(() => Shopcart, (shopcart: Shopcart) => shopcart.product)
