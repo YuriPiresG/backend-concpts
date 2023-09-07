@@ -1,7 +1,14 @@
 import { Shopcart } from 'src/shopcart/entities/shopcart.entity';
+import { Shopcart_product } from 'src/shopcart/entities/shopcart_product.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class Product {
+  @OneToMany(
+    () => Shopcart_product,
+    (shopcart_product) => shopcart_product.product,
+  )
+  shopcart_products: Shopcart_product[];
+
   @PrimaryGeneratedColumn()
   id: number;
 
