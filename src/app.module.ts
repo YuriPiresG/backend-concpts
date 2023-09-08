@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { ProductModule } from './product/product.module';
-import { ShopcartModule } from './shopcart/shopcart.module';
 import { Product } from './product/entities/product.entity';
+import { ProductModule } from './product/product.module';
 import { Shopcart } from './shopcart/entities/shopcart.entity';
-import { CheckoutModule } from './checkout/checkout.module';
+import { Shopcart_product } from './shopcart/entities/shopcart_product.entity';
+import { ShopcartModule } from './shopcart/shopcart.module';
 
 @Module({
   imports: [
@@ -17,12 +17,11 @@ import { CheckoutModule } from './checkout/checkout.module';
       username: 'root',
       password: 'root',
       database: 'concptsDb',
-      entities: [Shopcart, Product],
+      entities: [Shopcart, Product, Shopcart_product],
       synchronize: false,
     }),
     ShopcartModule,
     ProductModule,
-    CheckoutModule,
   ],
   controllers: [AppController],
   providers: [AppService],
