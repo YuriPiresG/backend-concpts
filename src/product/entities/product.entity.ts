@@ -32,7 +32,4 @@ export class Product {
 
   @Column()
   image: string;
-
-  @OneToMany(() => Shopcart, (shopcart: Shopcart) => shopcart.product)
-  shopcarts: Shopcart[];
 }

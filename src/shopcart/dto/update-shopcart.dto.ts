@@ -6,8 +6,4 @@ export class UpdateShopcartDto extends PartialType(CreateShopcartDto) {
   @IsNotEmpty()
   @IsNumber()
   productId: number;
-
-  @IsNotEmpty()
-  @IsNumber()
-  quantidade: number;
 }
